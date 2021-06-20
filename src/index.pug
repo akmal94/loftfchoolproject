@@ -51,3 +51,62 @@ block content
             p Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
           .about__ps 
             | Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+  .middle-section
+    section.values 
+      .container.values__container
+        .values__title 
+          .values__title--text Чем я могу быть полезен вам
+          .values__content 
+            p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+        .values__widget 
+          -
+            var skillsCategories = [
+              ["Frontend", ["HTML", "CSS", "javascript", "Vue"]],
+              ["Workflow", ["Git", "Terminal", "Gulp", "Webpack"]],
+            ]  
+          ul.skills 
+            each category in skillsCategories
+              li.skills__item 
+                .skills-row 
+                  .skills-row__title #{category[0]}
+                  ul.skills-row__list 
+                    each skill in category[1]
+                      li.skills-row__item 
+                        .skill 
+                          svg(viewBox="0 0 100 100").skill__circle-shape
+                            circle(cx="50" cy="50" r="40").skill__circle.skill__circle--layer--under
+                            circle(cx="50" cy="50" r="40" stroke="url(#gradient)" transform="rotate(180 50 50)").skill__circle.skill__circle--layer--above
+                            linearGradient(id="gradient" x1="0%" y1="0%" x2="100%" y2="0%")
+                              stop(offset="0%" stop-color="#DC9322")
+                              stop(offset="100%" stop-color="#D0731B")
+                          .skill__title #{skill}
+    section.works 
+      .container.works__container
+        .section-title Мои работы
+        .works__content
+          .works-preview 
+            .works-preview__pictures 
+              +image("content/slider-1.jpg", "works-preview__img")
+              .works-preview__thumbs 
+                ul.thumbs 
+                  - for (var i = 4; i> 0; i--)
+                    li.thumbs__item 
+                      a(href="").thumbs__link
+                        +image(`content/slider-${i}.jpg`, "thumbs__pic")
+              .works-preview__btns  
+                .square-btns 
+                  button(type="button").square-btns__item.square-btns__item--next
+                  button(type="button").square-btns__item.square-btns__item--prev
+            .works-preview__info 
+              - var tags = ["HTML", "CSS", "JavaScript"]
+              ul.tags 
+                each item in tags 
+                  li.tags__item 
+                    .tag #{item}
+              .works-preview__title Сайт школы образования
+              .works-preview__desc 
+                p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+              a(href="").iconed-link Посмотреть сайт
+
+
+
