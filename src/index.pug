@@ -3,7 +3,7 @@ extends ./layout.pug
 block content
   .welcome-section
     section.hero 
-      .container.hero__container
+      .hero__container
         header.header 
           a.logo(href="#") АИ
           nav.menu 
@@ -63,8 +63,8 @@ block content
           .values__widget 
           -
             var skillsCategories = [
-              ["Frontend", ["HTML", "CSS", "javascript", "Vue"]],
-              ["Workflow", ["Git", "Terminal", "Gulp", "Webpack"]],
+              ["Frontend", [{name:"HTML", value: 190},{name:"CSS", value: 210},{name:"javascript", value: 70},{name:"Vue", value: 190}]],
+              ["Workflow", [{name:"Git", value: 210},{name:"Terminal", value: 190},{name:"Gulp", value: 130},{name:"Webpack", value: 150}]] 
             ]  
           ul.skills 
             each category in skillsCategories
@@ -77,11 +77,11 @@ block content
                         .skill 
                           svg(viewBox="0 0 100 100").skill__circle-shape
                             circle(cx="50" cy="50" r="40").skill__circle.skill__circle--layer--under
-                            circle(cx="50" cy="50" r="40" stroke="url(#gradient)" transform="rotate(180 50 50)").skill__circle.skill__circle--layer--above
+                            circle(cx="50" cy="50" r="40" stroke="url(#gradient)" transform="rotate(180 50 50)" style={'stroke-dashoffset': skill.value}).skill__circle.skill__circle--layer--above
                             linearGradient(id="gradient" x1="0%" y1="0%" x2="100%" y2="0%")
                               stop(offset="0%" stop-color="#DC9322")
                               stop(offset="100%" stop-color="#D0731B")
-                          .skill__title #{skill}
+                          .skill__title #{skill.name}
     section.works 
       .container.works__container
         .section-title Мои работы
