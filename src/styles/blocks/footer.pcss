@@ -1,0 +1,59 @@
+.footer {
+  background-color: #222427;
+  padding-top: 70px;
+  padding-bottom: 80px;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  &-year {
+    font-weight: 600;
+    font-size: 48px;
+    color: rgba(255, 255, 255, 0.3);
+  }
+
+  &-user {
+    &--name {
+      font-weight: bold;
+      font-size: 18px;
+    }
+    &--text {
+      padding-top: 16px;
+      font-size: 16px;
+      color: rgba(255, 255, 255, 0.3);
+    }
+  }
+
+  &-info {
+    display: flex;
+    flex-direction: column;
+
+    .links__list {
+      display: flex;
+    }
+    .links__item {
+      margin-right: 60px;
+    }
+
+    &--text {
+      width: 314px;
+      padding-top: 48px;
+      color: rgba(255, 255, 255, 0.3);
+    }
+  }
+  &-quote {
+    &--text {
+      font-size: 16px;
+      width: 430px;
+      color: rgba(255, 255, 255, 0.3);
+    }
+    &--name {
+      font-style: italic;
+      font-size: 16px;
+      padding-top: 30px;
+    }
+  }
+}
