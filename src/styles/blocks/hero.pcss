@@ -1,5 +1,5 @@
 .hero__container {
-  height: 100vh;
+  height: 120vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -13,4 +13,15 @@
 .scroll-down-btn {
   background: none;
   color: #ffffff;
+
+  &:after {
+    content: "";
+    display: block;
+    width: 13px;
+    height: 13px;
+    background: url("~images/content/scroll.png") center top / cover no-repeat;
+    margin-left: 70px;
+    position: absolute;
+    margin-top: -15px;
+  }
 }

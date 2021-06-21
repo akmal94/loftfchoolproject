@@ -44,8 +44,8 @@
   display: flex;
 }
 .thumbs__pic {
-  width: 178px;
-  //height: 103px;
+  width: 130px;
+  height: 80px;
 }
 
 .square-btns {
@@ -112,12 +112,17 @@
   color: #586ed3;
   font-weight: bold;
   font-size: 18px;
+  margin-left: 40px;
 
   &:before {
-    content: url("~images/content/link.png") center top / cover no-repeat;
+    content: "";
+    display: block;
     height: 22px;
-    width: 10px;
-    //background-image: url("~images/content/link.png") center top / cover no-repeat;
+    width: 20px;
+    background: url("~images/content/link.png");
+    background-repeat: no-repeat;
+    position: absolute;
+    margin-top: -22px;
   }
 }
 
