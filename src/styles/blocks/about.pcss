@@ -17,6 +17,7 @@
 }
 
 .about__content {
+  position: relative;
   flex: 1;
 }
 
@@ -30,5 +31,15 @@
 .about__ps {
   width: 575px;
   font-style: italic;
-  margin-top: 77px;
+  margin-top: 100px;
+}
+
+.about__ps:before {
+  content: "";
+  display: block;
+  width: 27px;
+  height: 51px;
+  background: url("~images/content/star.png") center top / contain no-repeat;
+  position: absolute;
+  left: -40px;
 }
