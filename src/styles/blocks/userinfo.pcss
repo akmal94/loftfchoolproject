@@ -1,19 +1,32 @@
 .userInfo {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    justify-content: center;
-    padding-top: 8.125rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  padding-top: 8.125rem;
   &__title {
     font-size: 18px;
     margin-right: 68px;
     font-weight: 600;
     text-align: right;
-    color:rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.5);
   }
   &__name {
     font-size: 72px;
     font-weight: 800;
-    line-height:72px;
+    line-height: 72px;
+  }
+}
+
+@media (max-width: 768px) {
+  .userInfo {
+    flex-direction: column;
+
+    &__title{
+      text-align: center;
+    }
+    &__name{
+      text-align: center;
+    }
   }
 }

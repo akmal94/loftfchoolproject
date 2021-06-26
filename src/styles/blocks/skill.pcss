@@ -1,5 +1,6 @@
 .skills {
   margin-left: 135px;
+  width: 1000px;
 }
 .skill {
   position: relative;
@@ -9,6 +10,8 @@
 .skills__item {
   margin-top: 55px;
 }
+
+
 
 .skills-row__title {
   font-size: 24px;
@@ -24,7 +27,6 @@
   &--layer--above {
     stroke-width: 8px;
     stroke-dasharray: 251;
-    //stroke-dashoffset: 120;
   }
 }
 
@@ -34,7 +36,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   font-weight: bold;
-  font-size: 18px;
+  font-size: 14px;
 }
 
 .skills-row__list {
@@ -43,9 +45,22 @@
 }
 
 .skills-row__item {
-  margin-right: 65px;
+  margin-right: 15px;
 
   &:last-child {
     margin: 0;
+  }
+}
+
+@media (max-width: 1200px) {
+  .skills {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 468px) {
+  .skills {
+    margin: 0 auto;
+    width: 400px;
   }
 }

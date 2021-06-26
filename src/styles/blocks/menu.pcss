@@ -6,7 +6,22 @@
 .menu__item {
   margin-right: 60px;
 
-  &:last-child{
-      margin:0;
+  &:last-child {
+    margin: 0;
+  }
+}
+
+@media (max-width: 1200px) {
+  .menu__item {
+    margin-right: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .menu__item {
+    margin-right: 20px;
+  }
+  .menu {
+    display: none;
   }
 }

@@ -1,3 +1,10 @@
+.values__container {
+  display: flex;
+  padding-top: 145px;
+  padding-bottom: 145px;
+  position: relative;
+}
+
 .values__info {
   margin-left: 450px;
 }
@@ -14,14 +21,6 @@
     font-size: 16px;
   }
 }
-
-.values__container {
-  display: flex;
-  padding-top: 145px;
-  padding-bottom:145px;
-  position:relative;
-}
-
 .values__widget {
   margin-top: 80px;
 }
@@ -35,5 +34,38 @@
   bottom: -280px;
   width: 500px;
   height: 950px;
-  background: url("~images/content/keyboards.png") center top / contain no-repeat;
+  background: url("~images/content/keyboards.png") center top / contain
+    no-repeat;
+}
+
+@media (max-width: 1200px) {
+  .values__container {
+    padding-bottom: 500px;
+  }
+  .values__info {
+    margin: 0 auto;
+    width: 700px;
+  }
+
+  .keyboard {
+    transform: rotate(-90deg);
+    bottom: -220px;
+    left: 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  .values__container {
+    padding-bottom: 300px;
+  }
+  .values__info {
+    margin: 0 auto;
+    width: 500px;
+  }
+
+  .keyboard {
+    width: 300px;
+    bottom: -320px;
+    left: 450px;
+  }
 }
