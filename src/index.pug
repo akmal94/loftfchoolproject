@@ -58,8 +58,8 @@ block content
         .values__info
           .values__title 
             .values__title--text Чем я могу быть полезен вам
-            .values__content 
-              p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+          .values__content 
+            p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
           .values__widget 
           -
             var skillsCategories = [
@@ -146,26 +146,28 @@ block content
                       .user-display__occ Преподаватель
     section.footer 
       .footer__wrapper 
-        .footer-year © 2020
-        .footer-user 
-          .footer-user--name АКМАЛЬ #[br] ИСКАКОВ
-          .footer-user--text Личный сайт #[br] веб-разработчика
-        .footer-info 
-           - var linksItems = ["Обо мне", "Навыки", "Работы", "Отзывы"]
-            ul.links__list 
-              each item in linksItems 
-                li.links__item 
-                  a(href="#").links__link #{item}
-            .footer-info--text Этот сайт я сделал в рамках обучения в Школе онлайн образования Loftschool
-            -var socials = ["insta", "github", "vk",  "envelope"]
-              ul.socials.round
-                each item in socials 
-                  li.socials__item.round 
-                    a(href="#").socials__link
-                      +icon(item, "socials__icon")
-        .footer-quote
-          .footer-quote--text Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете
-          .footer-quote--name Martin Golding
+        .footer__left
+          .footer-year © 2020
+          .footer-user 
+            .footer-user--name АКМАЛЬ #[br] ИСКАКОВ
+            .footer-user--text Личный сайт #[br] веб-разработчика
+        .footer__right
+          .footer-info 
+            - var linksItems = ["Обо мне", "Навыки", "Работы", "Отзывы"]
+              ul.links__list 
+                each item in linksItems 
+                  li.links__item 
+                    a(href="#").links__link #{item}
+              .footer-info--text Этот сайт я сделал в рамках обучения в Школе онлайн образования Loftschool
+              -var socials = ["insta", "github", "vk",  "envelope"]
+                ul.socials.round
+                  each item in socials 
+                    li.socials__item.round 
+                      a(href="#").socials__link
+                        +icon(item, "socials__icon")
+          .footer-quote
+            .footer-quote--text Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете
+            .footer-quote--name Martin Golding
 
 
 

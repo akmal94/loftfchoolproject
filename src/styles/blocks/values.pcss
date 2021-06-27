@@ -40,7 +40,7 @@
 
 @media (max-width: 1200px) {
   .values__container {
-    padding-bottom: 500px;
+    //padding-bottom: 500px;
   }
   .values__info {
     margin: 0 auto;
@@ -48,24 +48,38 @@
   }
 
   .keyboard {
-    transform: rotate(-90deg);
-    bottom: -220px;
-    left: 350px;
+    width: 400px;
+    height: 700px;
+    bottom: -170px;
   }
 }
 
 @media (max-width: 768px) {
   .values__container {
     padding-bottom: 300px;
+    width: 700px;
+    margin: 0 auto;
   }
   .values__info {
+    margin: 0;
+  }
+  .values__title {
+    width: 270px;
+    text-align: center;
     margin: 0 auto;
-    width: 500px;
+  }
+
+  .values__content {
+    width: 470px;
+    margin: 0 auto;
+    padding-top: 53px;
+    text-align: center;
   }
 
   .keyboard {
+    transform: rotate(-90deg);
     width: 300px;
-    bottom: -320px;
-    left: 450px;
+    bottom: -200px;
+    left: 250px;
   }
 }

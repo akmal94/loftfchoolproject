@@ -141,3 +141,42 @@
     background: url("~images/content/prev.png") center top / cover no-repeat;
   }
 }
+
+@media (max-width: 768px) {
+  .works-preview {
+    flex-direction: column;
+  }
+
+  .works-preview__pictures {
+    width: 42.5rem;
+    margin: 0 auto;
+
+    &:before {
+      top: auto;
+      bottom: -30px;
+    }
+  }
+  .works-preview__info {
+    width: 410px;
+    position: relative;
+    margin: 0 auto;
+    padding-top: 56px;
+  }
+
+  .works-preview__desc {
+    text-align: center;
+  }
+
+  .works-preview__link {
+    text-align: center;
+  }
+  .tags {
+    justify-content: space-evenly;
+    width: 250px;
+    margin: 0 auto;
+  }
+
+  .section-title {
+    margin-left: 6rem;
+  }
+}

@@ -31,3 +31,32 @@
     background: url("~images/content/left.png") center top / cover no-repeat;
   }
 }
+
+@media (max-width: 1200px) {
+  .slider {
+    width: 1000px;
+    margin-left: 100px;
+  }
+}
+
+@media (max-width: 768px) {
+  .slider__header {
+    width: 600px;
+  }
+  .slider {
+    width: 750px;
+    margin: 0 auto;
+
+    .section-title {
+      margin-left: 0;
+    }
+  }
+  .slider__buttons {
+    margin-left: 30px;
+  }
+
+  .slider__item {
+    margin-left: 60px;
+    margin-right: 0;
+  }
+}

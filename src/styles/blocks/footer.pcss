@@ -9,10 +9,19 @@
     justify-content: space-around;
   }
 
+  &__left {
+    display: flex;
+  }
+  &__right {
+    display: flex;
+  }
+
   &-year {
     font-weight: 600;
     font-size: 48px;
+    line-height: 48px;
     color: rgba(255, 255, 255, 0.3);
+    margin-right: 56px;
   }
 
   &-user {
@@ -36,6 +45,7 @@
     }
     .links__item {
       margin-right: 60px;
+      min-width: 67px;
     }
 
     &--text {
@@ -56,5 +66,68 @@
       font-size: 16px;
       padding-top: 30px;
     }
+  }
+}
+
+@media (max-width: 1200px) {
+  .footer {
+    &__wrapper {
+      width: 1100px;
+      margin: 0 auto;
+      justify-content: start;
+    }
+    &__left {
+      flex-direction: column;
+    }
+
+    &__right {
+      width: 800px;
+    }
+
+    &-user {
+      margin-top: 25px;
+    }
+
+    &-info {
+      width: 550px;
+      margin-left: 70px;
+
+      .links__list {
+        justify-content: space-between;
+      }
+      .links__item {
+        &:last-child {
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .footer__wrapper {
+    width: 700px;
+  }
+  .footer-year {
+    width: 165px;
+  }
+
+  .footer__right {
+    flex-direction: column;
+  }
+
+  .footer-info {
+    margin: 0;
+    width: auto;
+
+    .links__item {
+      margin-right: 60px;
+      &:last-child {
+        margin: 0;
+      }
+    }
+  }
+  .footer-quote {
+    margin-top: 50px;
   }
 }

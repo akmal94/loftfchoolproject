@@ -10,35 +10,6 @@
   position: relative;
 }
 
-@media (max-width: 1200px) {
-  .about__container {
-    min-width: 700px;
-    margin: 0 auto;
-    margin-top: 130px;
-  }
-  .about__content {
-    max-width: 400px;
-  }
-}
-
-@media (max-width: 768px) {
-  .about__container {
-    flex-direction: column;
-    min-width: 500px;
-    margin: 0 auto;
-    margin-top: 130px;
-  }
-
-  .about__user {
-    align-self: center;
-  }
-  .about__content {
-    align-self: center;
-    margin-top: 20px;
-    max-width: 400px;
-  }
-}
-
 .about__desc {
   font-weight: 600;
   margin-bottom: 20px;
@@ -69,4 +40,41 @@
   background: url("~images/content/star.png") center top / contain no-repeat;
   position: absolute;
   left: -40px;
+}
+
+@media (max-width: 1200px) {
+  .about__container {
+    min-width: 700px;
+    margin: 0 auto;
+    margin-top: 130px;
+  }
+  .about__content {
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about__container {
+    width: 500px;
+    margin-top: 130px;
+    justify-content: space-between;
+  }
+
+  .about__user {
+    align-self: center;
+  }
+  .about__content {
+    align-self: center;
+    margin-top: -3.25rem;
+    max-width: 400px;
+  }
+
+  .about__text-info {
+    width: 100%;
+  }
+
+  .about__ps {
+    width: 100%;
+    margin-top: 80px;
+  }
 }
