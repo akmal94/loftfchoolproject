@@ -1,0 +1,21 @@
+script(type="text/x-template")#reviews-container
+    .slider 
+        .slider__header 
+            .section-title Что обо мне говорят
+            .slider__buttons 
+                button(type="button" @click="slide('prev')").round-btn.round-btn--pointer--left
+                button(type="button" @click="slide('next')").round-btn.round-btn--pointer--right              
+        swiper(ref="slider" :options="sliderOptions").slider__content
+            swiper-slide(v-for="review in reviews" :key="review.id").slider__item
+                .quote 
+                    .quote__text 
+                        p {{review.text}}
+                    .quote__user 
+                        .user-display 
+                            .user-display--avatar 
+                                .user-display--avatar-style 
+                                img(:src="review.pic").user-display__pic
+                            .user-display__data 
+                                .user-display__name {{review.name}}
+                                .user-display__occ {{review.occ}}
+            
