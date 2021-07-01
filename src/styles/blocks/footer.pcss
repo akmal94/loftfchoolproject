@@ -28,8 +28,10 @@
     &--name {
       font-weight: bold;
       font-size: 18px;
+      width: 115px;
     }
     &--text {
+      width: 140px;
       padding-top: 16px;
       font-size: 16px;
       color: rgba(255, 255, 255, 0.3);
@@ -129,5 +131,44 @@
   }
   .footer-quote {
     margin-top: 50px;
+  }
+}
+
+@media (max-width: 320px) {
+  .footer__wrapper {
+    flex-direction: column;
+  }
+
+  .footer-year {
+    width: 165px;
+    font-size: 48px !important;
+    margin-left: 30px;
+  }
+
+  .footer-user {
+    width: 250px;
+    //text-align: center;
+    margin-left: 30px;
+    &--name {
+      font-size: 18px;
+      width: 200px;
+    }
+    &--text {
+      font-size: 14px;
+      width: 220px;
+    }
+  }
+
+  .footer-info {
+    margin-left: 30px;
+    margin-top: 45px;
+  }
+
+  .footer-quote {
+    margin-left: 30px;
+    &--text {
+      width: 270px;
+      font-size:14px;
+    }
   }
 }

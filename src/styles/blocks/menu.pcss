@@ -11,6 +11,14 @@
   }
 }
 
+.menuIcon {
+  display: none;
+  width: 30px;
+  height: 25px;
+  background-image: url("~images/content/menu.png");
+  background-size: contain;
+}
+
 @media (max-width: 1200px) {
   .menu__item {
     margin-right: 40px;
@@ -23,5 +31,18 @@
   }
   .menu {
     display: none;
+  }
+}
+
+@media (max-width: 320px) {
+  .menu__item {
+    margin-right: 20px;
+  }
+  .menu {
+    display: none;
+  }
+
+  .menuIcon{
+    display: block;
   }
 }
