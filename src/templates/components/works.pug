@@ -20,6 +20,8 @@ script(type="text/x-template")#preview-display
             )     
         .works-preview__btns 
             btns(
+                :works="works"
+                :currentWork="currentWork"
                 @slide="$emit('slide', $event)"
             )
         
@@ -37,10 +39,12 @@ script(type="text/x-template")#preview-btns
         button(
             type="button"
             @click="$emit('slide', 'next')"
+            :class="{disabled: nextBtnDisabled == true}"
             ).square-btns__item.square-btns__item--next
         button(
             type="button"
             @click="$emit('slide', 'prev')"
+            :class="{active: prevBtnActive == true}"
         ).square-btns__item.square-btns__item--prev
 
 script(type="text/x-template")#preview-info

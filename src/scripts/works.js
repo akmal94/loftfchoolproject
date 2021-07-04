@@ -6,7 +6,16 @@ const thumbs = {
 };
 
 const btns = {
+  props: ["works","currentWork"],
   template: "#preview-btns",
+  computed: {
+    nextBtnDisabled() {
+      return this.works.length == this.currentWork.id;
+    },
+    prevBtnActive(){
+      return this.currentWork.id > 1;
+    }
+  },
 };
 
 const display = {
@@ -33,8 +42,8 @@ const info = {
   computed: {
     tagsArray() {
       return this.currentWork.skills.split(",");
-    }
-  }
+    },
+  },
 };
 
 new Vue({
@@ -52,17 +61,7 @@ new Vue({
       return this.works[0];
     },
   },
-  watch: {
-    currentIndex(value) {
-      this.makeInfiniteLoopForNdx(value);
-    },
-  },
   methods: {
-    makeInfiniteLoopForNdx(index) {
-      const worksNumber = this.works.length - 1;
-      if (index < 0) this.currentIndex = worksNumber;
-      if (index > worksNumber) this.currentIndex = 0;
-    },
     requireImagesToArray(data) {
       return data.map((item) => {
         const requiredImage = require(`../images/content/${item.photo}`)
@@ -75,11 +74,18 @@ new Vue({
       const lastItem = this.works[this.works.length - 1];
       switch (direction) {
         case "next":
+          const worksNumber = this.works.length - 1;
+          if (this.currentIndex == worksNumber) {
+            return;
+          }
           this.works.push(this.works[0]);
           this.works.shift();
           this.currentIndex++;
           break;
         case "prev":
+          if (this.currentIndex == 0) {
+            return;
+          }
           this.works.unshift(lastItem);
           this.works.pop();
           this.currentIndex--;
