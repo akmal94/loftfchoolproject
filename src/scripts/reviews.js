@@ -14,14 +14,16 @@ new Vue({
       reviews: [],
       sliderOptions: {
         slidesPerView: 2,
-        loop: false
-      }
+        loop: false,
+      },
+      nextBtnDisabled: false,
+      prevBtnDisabled: true
     };
   },
   computed: {
     slider() {
       return this.$refs["slider"].$swiper;
-    }
+    },
   },
   methods: {
     requireImagesToArray(data) {
@@ -33,10 +35,18 @@ new Vue({
     slide(direction) {
       switch (direction) {
         case "next":
-          this.slider.slideNext();
+          if (this.slider.activeIndex + 1 == this.slider.slides.length - 2) {
+            this.nextBtnDisabled = true;
+          }
+          this.prevBtnDisabled = false;
+          this.slider.slideNext()
           break;
         case "prev":
+          if(this.slider.activeIndex == 1){
+            this.prevBtnDisabled = true;
+          }
           this.slider.slidePrev();
+          this.nextBtnDisabled = false;
           break;
       }
     },

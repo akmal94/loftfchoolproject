@@ -18,6 +18,7 @@
 
 .slider__buttons {
   margin-left: 116px;
+  display: flex;
 }
 .round-btn {
   width: 53px;
@@ -26,9 +27,17 @@
   &--pointer--right {
     background: url("~images/content/right.png") center top / cover no-repeat;
     margin-left: 28px;
+    border-radius: 50%;
+    &.disabled{
+      filter: contrast(10%);
+    }
   }
   &--pointer--left {
     background: url("~images/content/left.png") center top / cover no-repeat;
+    border-radius: 50%;
+    &.disabled{
+      filter: contrast(10%);
+    }
   }
 }
 

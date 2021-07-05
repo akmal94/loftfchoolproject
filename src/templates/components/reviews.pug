@@ -3,8 +3,8 @@ script(type="text/x-template")#reviews-container
         .slider__header 
             .section-title Что обо мне говорят
             .slider__buttons 
-                button(type="button" @click="slide('prev')").round-btn.round-btn--pointer--left
-                button(type="button" @click="slide('next')").round-btn.round-btn--pointer--right              
+                img(type="button" :class="{disabled: prevBtnDisabled}" @click="slide('prev')").round-btn.round-btn--pointer--left
+                img(type="button" :class="{disabled: nextBtnDisabled}" @click="slide('next')").round-btn.round-btn--pointer--right              
         swiper(ref="slider" :options="sliderOptions").slider__content
             swiper-slide(v-for="review in reviews" :key="review.id").slider__item
                 .quote 
