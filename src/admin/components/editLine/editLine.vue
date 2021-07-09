@@ -1,7 +1,7 @@
 <template>
-  <div class="edit-line-component" :class="{'blocked' : blocked}">
+  <div class="edit-line-component" :class="{ blocked: blocked }">
     <div class="title" v-if="editmode === false">
-      <div class="text">{{value}}</div>
+      <div class="text">{{ value }}</div>
       <div class="icon">
         <icon symbol="pencil" grayscale @click="editmode = true"></icon>
       </div>
@@ -12,6 +12,7 @@
           placeholder="Название новой группы"
           :value="value"
           :errorText="errorText"
+          :errorMessage="errorMessage"
           @input="$emit('input', $event)"
           @keydown.native.enter="onApprove"
           autofocus="autofocus"
@@ -35,33 +36,36 @@ export default {
   props: {
     value: {
       type: String,
-      default: ""
+      default: "",
     },
     errorText: {
       type: String,
-      default: ""
+      default: "",
     },
-    blocked: Boolean
+    editModeDefault: Boolean,
+    blocked: Boolean,
   },
   data() {
     return {
-      editmode: false,
-      title: this.value
+      editmode: this.editModeDefault,
+      title: this.value,
+      errorMessage: "",
     };
   },
   methods: {
     onApprove() {
       if (this.title.trim() === this.value.trim()) {
-        this.editmode = false;
+        this.errorMessage = "Заполните поле";
       } else {
         this.$emit("approve", this.value);
+        this.editmode = false;
       }
-    }
+    },
   },
   components: {
     icon: () => import("components/icon"),
-    appInput: () => import("components/input")
-  }
+    appInput: () => import("components/input"),
+  },
 };
 </script>
 
